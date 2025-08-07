@@ -16,17 +16,14 @@ const App: React.FC = () => {
 
   const wordLength = level + 3;
 
-
   useEffect(() => {
     const fetchWord = async () => {
-      console.log(wordLength);
       const { data, error } = await supabase
         .from('first_level')
         .select('words')
         .eq('length', wordLength);
 
       console.log('✅ Data:', data);
-      console.log('❌ Error:', error);
 
       if (error) {
         console.error('❌ Supabase fetch error:', error);
@@ -48,14 +45,11 @@ const App: React.FC = () => {
     setIsGameOver(false);
   }, [level, wordLength]);
 
-  console.log('currentGuess', currentGuess);
-
   const handleAlphabetical = (key: string) => {
     setCurrentGuess((currentGuess) => {
       const currentWordArray = currentGuess.split('');
       currentWordArray.push(key);
       const newWord = currentWordArray.join('');
-
 
       return newWord;
     });
@@ -74,11 +68,9 @@ const App: React.FC = () => {
                 setTimeout(() => setLevel(level + 1), 1000);
               } else {
                 setIsGameOver(true);
-                alert('🚨 GAME OVER');
               }
             } else if (newGuesses.length >= MAX_ATTEMPTS) {
               setIsGameOver(true);
-              alert('🚨 GAME OVER');
             }
             setCurrentGuess('');
           } else {
@@ -157,11 +149,11 @@ const App: React.FC = () => {
       />
       {isGameOver && (
         <div>
-          <p>
+          <h3>
             {guesses[guesses.length - 1]?.toLowerCase() === targetWord
-              ? '✅ LEVEL COMPLETE'
-              : '🚨 GAME OVER'}
-          </p>
+              ? 'LEVEL COMPLETE'
+              : 'GAME OVER'}
+          </h3>
           <button onClick={() => restartHelper(level)}>Restart</button>
         </div>
       )}

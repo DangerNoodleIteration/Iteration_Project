@@ -11,7 +11,7 @@ const Keyboard: React.FC<keyboardProps> = ({
   guesses,
   targetWord,
 }) => {
-  const letters = [
+  const letters: string[][] = [
     ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'],
     ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'],
     ['Enter', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', 'Backspace'],
@@ -48,7 +48,7 @@ const Keyboard: React.FC<keyboardProps> = ({
     M: 'default',
   });
 
-  const handleClick = (key: string) => {
+  const handleClick = (key: string): void => {
     onKeyDown(key);
   };
 
@@ -56,7 +56,7 @@ const Keyboard: React.FC<keyboardProps> = ({
     const handleLetterUpdate = (
       guessLetters: string[],
       stautsArr: string[]
-    ) => {
+    ): void => {
       const newKeyStates = { ...keyStates };
       guessLetters.forEach((key, i) => {
         newKeyStates[key] = stautsArr[i];
@@ -65,7 +65,7 @@ const Keyboard: React.FC<keyboardProps> = ({
       setKeyStates(newKeyStates);
     };
 
-    const handleKeyboardReset = () => {
+    const handleKeyboardReset = (): void => {
       const newKeyStates = Object.keys(keyStates).reduce((acc, key) => {
         acc[key] = 'default';
         return acc;
