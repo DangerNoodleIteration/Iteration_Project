@@ -1,7 +1,7 @@
 import { it, expect, describe, beforeAll } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import Keyboard from '../keyboard';
-import '@testing-library/jest-dom/vitest'; //getting custom matchers
+import '@testing-library/jest-dom' //getting custom matchers
 
 describe('Unit testing Keyboard component', () => {
   describe('Set KeyboardProps', () => {
