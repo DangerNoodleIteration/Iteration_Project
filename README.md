@@ -111,7 +111,7 @@ Users should be able to:
     guesses,
     targetWord,
   ]);
-  /* Note: adding keyStates to the dependency array will create an infinite loop */
+  /* Note: adding keyStates to the dependency array will create a circular dependency that leads to an infinite loop */
 ```
 
 **2. Component unit testing:** Mocking Supabase client import with the word "cat"
