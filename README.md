@@ -66,7 +66,7 @@ Users should be able to:
 
 ## Major Coding Win
 
-**Component logic:** Updating keyboard state for color feedback and resetting on a new level:
+**1. Component logic:** Updating keyboard state for color feedback and resetting on a new level:
 
 ```js
   useEffect(() => {
@@ -114,7 +114,7 @@ Users should be able to:
   /* Note: adding keyStates to the dependency array will create an infinite loop */
 ```
 
-**Component unit testing:** Mocking Supabase client import with the word "cat"
+**2. Component unit testing:** Mocking Supabase client import with the word "cat"
 
 ```js
 vi.mock('../../../supabaseClient', () => ({
@@ -128,6 +128,10 @@ vi.mock('../../../supabaseClient', () => ({
 }));
 ```
 
+**3. Connecting to DB via frontend:**
+
+Used `useEffect` and `createClient` from `@supabase/supabase-js` to fetch words array from Supabase on the front-end. This sets the target word in the state.
+
 ## Technical Challenges
 
 - ## Jonathan
@@ -136,6 +140,7 @@ vi.mock('../../../supabaseClient', () => ({
 - ## Lisa
   - debugging an unfamiliar codebase
   - useEffect lint errors causing stack overflow when resolved
+  - resolving typescript errors
   - updating react state of a nested array/object
 - ## Michael
   - Testing with Vitest
