@@ -134,14 +134,14 @@ Used `useEffect` and `createClient` from `@supabase/supabase-js` to fetch words 
 
 ## Technical Challenges
 
-- ## Michael
+- Michael
   - Testing with Vitest
   - Mocking fetch result in unit test of game component
   - Determining asynchronicity in unit tests
-- ## Jonathan
+- Jonathan
   - accessing environment variables across files
   - connecting backend database to frontend
-- ## Lisa
+- Lisa
   - debugging an unfamiliar codebase
   - resolving typescript errors
   - updating react state of a nested array/object
