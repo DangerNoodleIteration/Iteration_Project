@@ -134,18 +134,21 @@ Used `useEffect` and `createClient` from `@supabase/supabase-js` to fetch words 
 
 ## Technical Challenges
 
+- ## Michael
+  - Testing with Vitest
+  - Mocking fetch result in unit test of game component
+  - Determining asynchronicity in unit tests
 - ## Jonathan
   - accessing environment variables across files
   - connecting backend database to frontend
 - ## Lisa
   - debugging an unfamiliar codebase
-  - useEffect lint errors causing stack overflow when resolved
   - resolving typescript errors
   - updating react state of a nested array/object
-- ## Michael
-  - Testing with Vitest
-  - Mocking fetch result in unit test of game component
-  - Determining asynchronicity in unit tests
+  - useEffect lint errors causing stack overflow when resolved
+    - ![update_depth_error](./client/public/update_depth_sm.png)
+  - react batching causing only the last letter's color to be updated in a turn
+    - ![react_batching](./client/public/react_batching_sm.png)
 
 ## Installation Instructions
 
