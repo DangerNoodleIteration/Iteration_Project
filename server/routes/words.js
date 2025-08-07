@@ -3,8 +3,6 @@ import wordController from '../controllers/wordController.js';
 
 const router = express.Router();
 
-router.get('/:number', wordController.getWords, (req, res) => {
-  res.status(200).json(res.locals.words);
-});
+router.get('/:length', wordController.getWords);
 
 export default router;
